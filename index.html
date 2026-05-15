@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Resume of Prince Kumar — Lead Solution Architect and Engineering Manager with 12+ years of experience in insurance, fintech, and enterprise software in Japan.">
+    <meta name="keywords" content="Prince Kumar, Solution Architect, Engineering Manager, Metlife Japan, Kubernetes, Azure, Microservices, Java, Golang">
+    <title>Prince Kumar — Lead Solution Architect</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --navy:       #0d2137;
+            --blue:       #1565C0;
+            --blue-hover: #1976D2;
+            --text:       #1a202c;
+            --text-muted: #4a5568;
+            --text-light: #718096;
+            --bg:         #ffffff;
+            --bg-sidebar: #f0f4f8;
+            --border:     #e2e8f0;
+            --tag-bg:     rgba(21,101,192,0.08);
+            --tag-color:  #1565C0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--text);
+            background: #dde3ea;
+            font-size: 14px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ─── PAGE WRAPPER ─── */
+        .page {
+            max-width: 1080px;
+            margin: 36px auto;
+            background: var(--bg);
+            box-shadow: 0 6px 32px rgba(0,0,0,0.14);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        /* ─── HEADER ─── */
+        .header {
+            background: linear-gradient(135deg, #0d2137 0%, #1256a8 100%);
+            color: #fff;
+            padding: 44px 52px 38px;
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 32px;
+        }
+        .header-name h1 {
+            font-size: 34px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+        }
+        .header-name .title {
+            font-size: 15px;
+            font-weight: 400;
+            color: rgba(255,255,255,0.78);
+            margin-top: 7px;
+        }
+        .header-badges {
+            display: flex;
+            gap: 8px;
+            margin-top: 18px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            background: rgba(255,255,255,0.13);
+            border: 1px solid rgba(255,255,255,0.28);
+            color: rgba(255,255,255,0.9);
+            padding: 4px 13px;
+            border-radius: 20px;
+            font-size: 11.5px;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+        }
+        .header-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+            flex-shrink: 0;
+            padding-top: 4px;
+        }
+        .header-contact a,
+        .header-contact span {
+            color: rgba(255,255,255,0.82);
+            text-decoration: none;
+            font-size: 12.5px;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            transition: color 0.15s;
+        }
+        .header-contact a:hover { color: #fff; }
+        .ci {
+            width: 15px;
+            height: 15px;
+            flex-shrink: 0;
+            opacity: 0.65;
+        }
+
+        /* ─── BODY GRID ─── */
+        .body {
+            display: grid;
+            grid-template-columns: 288px 1fr;
+        }
+
+        /* ─── SIDEBAR ─── */
+        .sidebar {
+            background: var(--bg-sidebar);
+            padding: 34px 26px;
+            border-right: 1px solid var(--border);
+        }
+        .sidebar-section { margin-bottom: 30px; }
+        .sidebar-section:last-child { margin-bottom: 0; }
+        .sidebar-section h3 {
+            font-size: 10.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.6px;
+            color: var(--blue);
+            margin-bottom: 14px;
+            padding-bottom: 7px;
+            border-bottom: 2px solid var(--blue);
+        }
+
+        /* Skills */
+        .skill-group { margin-bottom: 15px; }
+        .skill-group:last-child { margin-bottom: 0; }
+        .skill-group-label {
+            font-size: 10.5px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 7px;
+        }
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+        .skill-tag {
+            background: var(--tag-bg);
+            color: var(--tag-color);
+            border: 1px solid rgba(21,101,192,0.18);
+            padding: 3px 9px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+        }
+        .skill-tag.h {
+            background: var(--blue);
+            color: #fff;
+            border-color: var(--blue);
+        }
+
+        /* Certifications */
+        .cert-item {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 13px;
+            align-items: flex-start;
+        }
+        .cert-item:last-child { margin-bottom: 0; }
+        .cert-icon {
+            width: 30px;
+            height: 30px;
+            background: var(--blue);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        .cert-name { font-size: 12px; font-weight: 500; color: var(--text); line-height: 1.4; }
+        .cert-date { font-size: 11px; color: var(--text-light); margin-top: 1px; }
+
+        /* Languages */
+        .lang-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 9px;
+        }
+        .lang-item:last-child { margin-bottom: 0; }
+        .lang-name { font-size: 13px; font-weight: 500; }
+        .lang-level {
+            font-size: 11px;
+            color: var(--text-light);
+            background: var(--bg);
+            padding: 2px 9px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+        }
+
+        /* Education */
+        .edu-degree { font-size: 12.5px; font-weight: 600; color: var(--text); }
+        .edu-school  { font-size: 12px; color: var(--text-muted); margin-top: 3px; line-height: 1.4; }
+        .edu-period  { font-size: 11px; color: var(--text-light); margin-top: 3px; }
+
+        /* ─── MAIN CONTENT ─── */
+        .main { padding: 34px 42px; }
+        .main-section { margin-bottom: 34px; }
+        .main-section:last-child { margin-bottom: 0; }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+        .section-header h2 {
+            font-size: 10.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.6px;
+            color: var(--text);
+            white-space: nowrap;
+        }
+        .section-line { flex: 1; height: 1px; background: var(--border); }
+
+        /* Summary */
+        .summary-text {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.78;
+        }
+        .summary-text + .summary-text { margin-top: 10px; }
+        .summary-text strong { color: var(--text); font-weight: 600; }
+
+        /* Experience */
+        .exp-item {
+            margin-bottom: 26px;
+            padding-bottom: 26px;
+            border-bottom: 1px solid var(--border);
+        }
+        .exp-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+        .company-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 11px;
+        }
+        .company-name  { font-size: 15px; font-weight: 700; color: var(--text); }
+        .company-loc   { font-size: 12px; color: var(--text-light); font-weight: 400; margin-left: 5px; }
+        .company-period{ font-size: 12px; color: var(--text-light); white-space: nowrap; }
+
+        .role-block { margin-bottom: 13px; }
+        .role-block:last-of-type { margin-bottom: 0; }
+
+        .role-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+        .role-title  { font-size: 12.5px; font-weight: 600; color: var(--blue); }
+        .role-period { font-size: 11px; color: var(--text-light); white-space: nowrap; margin-left: 12px; }
+
+        .role-desc {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 7px;
+            line-height: 1.6;
+        }
+
+        .achievements { list-style: none; padding: 0; }
+        .achievements li {
+            font-size: 12px;
+            color: var(--text-muted);
+            padding-left: 16px;
+            position: relative;
+            margin-bottom: 5px;
+            line-height: 1.58;
+        }
+        .achievements li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--blue);
+            font-size: 10px;
+            top: 2px;
+        }
+        .achievements li strong { color: var(--text); font-weight: 600; }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 4px;
+            margin-top: 10px;
+        }
+        .tech-label {
+            font-size: 10.5px;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-right: 2px;
+        }
+        .tech-tag {
+            background: #edf2f7;
+            color: var(--text-muted);
+            border: 1px solid #e2e8f0;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        /* ─── PRINT ─── */
+        @media print {
+            body { background: white; }
+            .page { margin: 0; box-shadow: none; border-radius: 0; max-width: 100%; }
+        }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 760px) {
+            .page { margin: 0; border-radius: 0; }
+            .header { padding: 28px 22px; }
+            .header-inner { flex-direction: column; }
+            .body { grid-template-columns: 1fr; }
+            .sidebar { border-right: none; border-bottom: 1px solid var(--border); }
+            .main { padding: 24px 20px; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- ═══ HEADER ═══ -->
+    <header class="header">
+        <div class="header-inner">
+            <div class="header-name">
+                <h1>Prince Kumar</h1>
+                <p class="title">Lead Solution Architect &amp; Engineering Manager &nbsp;·&nbsp; Metlife Japan</p>
+                <div class="header-badges">
+                    <span class="badge">12+ Years Experience</span>
+                    <span class="badge">JLPT N2</span>
+                    <span class="badge">SAFe 6 Scrum Master</span>
+                    <span class="badge">Azure AZ-104</span>
+                </div>
+            </div>
+            <div class="header-contact">
+                <a href="mailto:prince18pat@gmail.com">
+                    <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+                    prince18pat@gmail.com
+                </a>
+                <a href="tel:+818034781809">
+                    <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.8 19.8 0 0 1 1.61 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.74a16 16 0 0 0 6.35 6.35l.87-.87a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    +81-80-3478-1809
+                </a>
+                <a href="https://www.linkedin.com/in/prinkr" target="_blank" rel="noopener noreferrer">
+                    <svg class="ci" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                    linkedin.com/in/prinkr
+                </a>
+                <span>
+                    <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                    Tokyo, Japan
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <div class="body">
+
+        <!-- ═══ SIDEBAR ═══ -->
+        <aside class="sidebar">
+
+            <!-- Skills -->
+            <div class="sidebar-section">
+                <h3>Core Skills</h3>
+
+                <div class="skill-group">
+                    <div class="skill-group-label">Architecture &amp; Leadership</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag h">Solution Architecture</span>
+                        <span class="skill-tag h">Distributed Systems</span>
+                        <span class="skill-tag">Microservices</span>
+                        <span class="skill-tag">Event-Driven Arch</span>
+                        <span class="skill-tag">Enterprise Modernization</span>
+                        <span class="skill-tag">Cloud Platform Design</span>
+                        <span class="skill-tag">Tech Governance</span>
+                        <span class="skill-tag">SAFe / Agile</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <div class="skill-group-label">Programming</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag h">Java</span>
+                        <span class="skill-tag h">Golang</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Python</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <div class="skill-group-label">Frameworks</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Spring</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">NextJS</span>
+                        <span class="skill-tag">NodeJS</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <div class="skill-group-label">Data &amp; Messaging</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">Oracle</span>
+                        <span class="skill-tag">Cassandra</span>
+                        <span class="skill-tag">Redis</span>
+                        <span class="skill-tag h">Kafka</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <div class="skill-group-label">Cloud &amp; Infrastructure</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag h">Microsoft Azure</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag h">Kubernetes (AKS)</span>
+                        <span class="skill-tag">Istio Service Mesh</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">CI/CD Architecture</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <div class="skill-group-label">Observability &amp; DevOps</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Azure DevOps</span>
+                        <span class="skill-tag">Splunk</span>
+                        <span class="skill-tag">AppDynamics</span>
+                        <span class="skill-tag">Elasticsearch</span>
+                        <span class="skill-tag">Ansible</span>
+                        <span class="skill-tag">Jenkins</span>
+                        <span class="skill-tag">Git</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="sidebar-section">
+                <h3>Certifications</h3>
+                <div class="cert-item">
+                    <div class="cert-icon">Az</div>
+                    <div>
+                        <div class="cert-name">Azure Administrator Associate (AZ-104)</div>
+                        <div class="cert-date">Microsoft · July 2022</div>
+                    </div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon">N2</div>
+                    <div>
+                        <div class="cert-name">JLPT N2 — License N2A320271J</div>
+                        <div class="cert-date">January 2022</div>
+                    </div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon">SM</div>
+                    <div>
+                        <div class="cert-name">Certified SAFe 6 Scrum Master</div>
+                        <div class="cert-date">May 2023</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Languages -->
+            <div class="sidebar-section">
+                <h3>Languages</h3>
+                <div class="lang-item">
+                    <span class="lang-name">English</span>
+                    <span class="lang-level">Fluent</span>
+                </div>
+                <div class="lang-item">
+                    <span class="lang-name">Japanese</span>
+                    <span class="lang-level">Business · JLPT N2</span>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="sidebar-section">
+                <h3>Education</h3>
+                <div>
+                    <div class="edu-degree">B.Tech, Information Technology</div>
+                    <div class="edu-school">National Institute of Technology,<br>Allahabad, India</div>
+                    <div class="edu-period">July 2009 – May 2013</div>
+                </div>
+            </div>
+
+        </aside>
+
+        <!-- ═══ MAIN ═══ -->
+        <main class="main">
+
+            <!-- Summary -->
+            <section class="main-section">
+                <div class="section-header">
+                    <h2>Professional Summary</h2>
+                    <div class="section-line"></div>
+                </div>
+                <p class="summary-text">
+                    Lead Solution Architect with <strong>12+ years</strong> of experience designing and modernizing large-scale enterprise systems in the insurance, fintech, and enterprise software domains in Japan. Proven track record leading architecture for <strong>cloud-native platforms supporting 50,000+ sales agents</strong> and high-volume insurance transactions.
+                </p>
+                <p class="summary-text">
+                    Specialized in <strong>distributed system architecture</strong>, Kubernetes platforms, and enterprise modernization programs, with hands-on expertise across microservices, API platforms, and data systems. Experienced leading cross-functional engineering organizations of <strong>40+ engineers</strong> and driving large-scale cloud transformations across legacy and modern systems.
+                </p>
+                <p class="summary-text">
+                    Fluent in English and <strong>business-level Japanese (JLPT N2)</strong>, with strong experience collaborating across engineering, business, and security stakeholders in global organizations.
+                </p>
+            </section>
+
+            <!-- Experience -->
+            <section class="main-section">
+                <div class="section-header">
+                    <h2>Work Experience</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <!-- Metlife Japan -->
+                <div class="exp-item">
+                    <div class="company-header">
+                        <div>
+                            <span class="company-name">Metlife Japan</span>
+                            <span class="company-loc">· Tokyo, Japan</span>
+                        </div>
+                        <span class="company-period">Mar 2020 – Present</span>
+                    </div>
+
+                    <!-- Role 1 -->
+                    <div class="role-block">
+                        <div class="role-header">
+                            <span class="role-title">Manager, Lead Solution Architect — Distribution System</span>
+                            <span class="role-period">Apr 2025 – Present</span>
+                        </div>
+                        <p class="role-desc">Lead architecture and engineering direction for the modernization of MetLife Japan's insurance distribution platform processing <strong>1M+ transactions per day</strong>, supporting internal sales channels and partner integration.</p>
+                        <ul class="achievements">
+                            <li>Lead and mentor a cross-functional team of <strong>40+ engineers across 8 agile teams</strong> responsible for design, development, and operations of the distribution F2F platform.</li>
+                            <li>Established architecture review processes and technical standards across 8 engineering teams to ensure consistency, security, and scalability.</li>
+                            <li>Architected modernization of the F2F insurance distribution platform used by <strong>50,000+ agents</strong>, improving performance by <strong>~70%</strong> and reducing production incidents by <strong>~80%</strong>.</li>
+                            <li>Designed and optimized Kubernetes and Istio infrastructure, increasing availability to <strong>99.99%</strong> and cutting deployment time by <strong>~80%</strong> via automated scaling and traffic routing.</li>
+                            <li>Defined resilience strategies including Kubernetes health-check, automated failover, and monitoring frameworks to improve operational stability.</li>
+                            <li>Led migration of <strong>15+ insurance product systems</strong> from legacy monolithic architecture to cloud-native microservices on Azure.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Role 2 -->
+                    <div class="role-block" style="margin-top:14px">
+                        <div class="role-header">
+                            <span class="role-title">Assistant Manager, Senior Solution Architect — Distribution System</span>
+                            <span class="role-period">Apr 2022 – Mar 2025</span>
+                        </div>
+                        <ul class="achievements">
+                            <li>Provided technical leadership across <strong>8 cross-functional agile teams</strong> responsible for migrating the legacy distribution platform to cloud-native architecture.</li>
+                            <li>Designed the target architecture for the F2F insurance distribution platform on <strong>Azure Kubernetes Service</strong> supporting 50,000+ sales agents daily.</li>
+                            <li>Led transformation of legacy <strong>ESB / ETL / SOAP-based integrations</strong> into modern API-driven microservices architecture.</li>
+                            <li>Migrated CI/CD pipelines and observability from on-premise to <strong>Azure DevOps</strong> and cloud-based monitoring platforms.</li>
+                            <li>Implemented centralized observability using <strong>Splunk, AppDynamics, and Azure Application Insights</strong> to track system performance and business KPIs.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Role 3 -->
+                    <div class="role-block" style="margin-top:14px">
+                        <div class="role-header">
+                            <span class="role-title">Senior Software Engineer — Bancassurance System</span>
+                            <span class="role-period">Mar 2020 – Mar 2022</span>
+                        </div>
+                        <ul class="achievements">
+                            <li>Collaborated in designing and executing the migration of <strong>two major Distribution Bancassurance platforms</strong> from on-prem infrastructure to Cloud.</li>
+                            <li>Designed system integrations and architecture proposals for new platform capabilities and BAU activities.</li>
+                            <li>Design and Integration of <strong>SSO &amp; R/P</strong> for Sales Platform to connect seamlessly with existing systems.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tech-stack">
+                        <span class="tech-label">Tech:</span>
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">Groovy</span>
+                        <span class="tech-tag">NextJS</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Spring Boot</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">Azure</span>
+                        <span class="tech-tag">Kubernetes</span>
+                        <span class="tech-tag">Istio</span>
+                        <span class="tech-tag">Azure DevOps</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Splunk</span>
+                        <span class="tech-tag">AppDynamics</span>
+                    </div>
+                </div>
+
+                <!-- Origami -->
+                <div class="exp-item">
+                    <div class="company-header">
+                        <div>
+                            <span class="company-name">Origami Inc</span>
+                            <span class="company-loc">· Tokyo, Japan</span>
+                        </div>
+                        <span class="company-period">Feb 2019 – Feb 2020</span>
+                    </div>
+                    <div class="role-block">
+                        <div class="role-header">
+                            <span class="role-title">Sr. Software Engineer — Platform Development</span>
+                            <span class="role-period">Feb 2019 – Feb 2020</span>
+                        </div>
+                        <p class="role-desc">Developed microservices for <strong>Origami Pay</strong>, a mobile payment platform used by merchants and consumers across Japan.</p>
+                        <ul class="achievements">
+                            <li>Designed and implemented <strong>Go-based microservices</strong> supporting P2P payments, wallet management, and KYC verification workflows.</li>
+                            <li>Built payment services handling merchant transactions and wallet balance management.</li>
+                            <li>Implemented fraud detection features and <strong>3D Secure authentication flows</strong> for credit card payments.</li>
+                        </ul>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-label">Tech:</span>
+                        <span class="tech-tag">Golang</span>
+                        <span class="tech-tag">AWS</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Redis</span>
+                        <span class="tech-tag">GitLab</span>
+                    </div>
+                </div>
+
+                <!-- Works Applications -->
+                <div class="exp-item">
+                    <div class="company-header">
+                        <div>
+                            <span class="company-name">Works Applications Inc</span>
+                            <span class="company-loc">· Tokyo, Japan</span>
+                        </div>
+                        <span class="company-period">Nov 2016 – Jan 2019</span>
+                    </div>
+                    <div class="role-block">
+                        <div class="role-header">
+                            <span class="role-title">R&amp;D Engineer — HUE Interface</span>
+                            <span class="role-period">Nov 2016 – Jan 2019</span>
+                        </div>
+                        <p class="role-desc">Large-scale enterprise platform development for HUE ERP systems.</p>
+                        <ul class="achievements">
+                            <li>Developed microservices supporting <strong>large-scale data ingestion and analytics workflows</strong>.</li>
+                            <li>Built REST APIs for processing and ingestion of large-size data to the system.</li>
+                            <li>Implemented batch processing, data transformation, encryption, compression, and streaming with <strong>Kafka, Hadoop, Hive, and PrestoDB</strong>.</li>
+                            <li>Developed high-performance data synchronization services across cloud and on-prem environments.</li>
+                        </ul>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-label">Tech:</span>
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">AWS</span>
+                        <span class="tech-tag">Cassandra</span>
+                        <span class="tech-tag">Kubernetes</span>
+                        <span class="tech-tag">Kafka</span>
+                        <span class="tech-tag">Hadoop</span>
+                        <span class="tech-tag">Hive</span>
+                        <span class="tech-tag">PrestoDB</span>
+                        <span class="tech-tag">Ansible</span>
+                        <span class="tech-tag">Redis</span>
+                    </div>
+                </div>
+
+                <!-- Hikari Tsushin -->
+                <div class="exp-item">
+                    <div class="company-header">
+                        <div>
+                            <span class="company-name">Hikari Tsushin Inc</span>
+                            <span class="company-loc">· Tokyo, Japan</span>
+                        </div>
+                        <span class="company-period">Feb 2014 – Oct 2016</span>
+                    </div>
+                    <div class="role-block">
+                        <div class="role-header">
+                            <span class="role-title">Lead Software Engineer — System Development</span>
+                            <span class="role-period">Feb 2014 – Oct 2016</span>
+                        </div>
+                        <p class="role-desc">Developed backend systems for <strong>EPARK</strong>, a real-time reservation and queue management platform.</p>
+                        <ul class="achievements">
+                            <li>Built REST APIs supporting <strong>reservation and waiting-time management</strong> services.</li>
+                            <li>Migrated existing applications from on-prem infrastructure to AWS.</li>
+                            <li>Designed <strong>centralized user account management services</strong> used across multiple EPARK products.</li>
+                        </ul>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-label">Tech:</span>
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">Redis</span>
+                        <span class="tech-tag">AWS</span>
+                        <span class="tech-tag">Elasticsearch</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                </div>
+
+                <!-- Venera -->
+                <div class="exp-item">
+                    <div class="company-header">
+                        <div>
+                            <span class="company-name">Venera Technologies Pvt Ltd</span>
+                            <span class="company-loc">· New Delhi, India</span>
+                        </div>
+                        <span class="company-period">Jun 2013 – Nov 2013</span>
+                    </div>
+                    <div class="role-block">
+                        <div class="role-header">
+                            <span class="role-title">Software Engineer</span>
+                            <span class="role-period">Jun 2013 – Nov 2013</span>
+                        </div>
+                        <p class="role-desc">Developed a video encoding and transcoding platform (cutcompress) — data compression, transcoding pipelines, and file splitters for combining multiple inputs.</p>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-label">Tech:</span>
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">MFC</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    </div>
+</div>
+</body>
+</html>
